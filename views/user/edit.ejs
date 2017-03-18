@@ -1,0 +1,28 @@
+
+<br><br>
+<div class="container" style="margin-top:4%; max-width:30%; padding:19px 29px 29px; background-color:#ececec; border:1px solid #9EC0EB; border-radius:15px;">
+
+	<form action="/user/update/<%= user.id %>" method="post" enctype="multipart/form-data" id="updateUser">
+		<h2> Edit user's information </h2>
+			<input type="text" class="form-control" name="name" value="<%= user.name %>" style="margin-bottom:10px;"/>
+			<input type="text" class="form-control" name="title" value="<%= user.mobile_phone %>" style="margin-bottom:10px;"/>
+			<input type="text" class="form-control" name="name" value="<%= user.email %>" style="margin-bottom:10px;"/>
+			<input type="file" id="userPhotoInput" name="userPhoto" id ="userPhoto" />
+			<br>
+			<% if(session.authenticated && session.User.isAdmin) { %> 
+				<% if(user.isAdmin) { %>
+		 				<input type="hidden" name="admin" value = "unchecked" >
+						<label class="checkbox">
+							<input type="checkbox" name="admin" checked>admin 
+						</label>
+				 <% } else { %>	
+				 		<input type="hidden" name="admin" value = "unchecked" >
+						<label class="checkbox">
+							<input type="checkbox" name="admin">admin 
+						</label>
+					<% } %>
+			<% } %>
+			<input type="submit" class="btn btn-lg btn-primary btn-block" name="Proceed" value="Proceed" >
+			<input type="hidden" class="form-control" name="_csrf" value="<%= _csrf %>"/>
+	</form>
+</div>

@@ -1,0 +1,42 @@
+<div class="container"  ng-app=""  style="margin-top:4%; max-width:30%; padding:19px 29px 29px; background-color:#ececec; border:1px solid #9EC0EB; border-radius:15px;">
+
+<center>
+<form action="/user/create" method="post"  class="form-signin1" >
+	<h2 class="form-signin-heading">Create an account</h2>
+		<% if(flash && flash.err){ %>
+		<ul class="alert alert-success">
+		<% Object.keys(flash.err).forEach(function(error){%>
+				<li><%- JSON.stringify(flash.err[error]) %> </li>
+		<%}) %>
+		</ul>
+	<% }
+	%>
+	<input type="text" class="form-control" placeholder="User Name" name="user_name" style="margin-bottom:10px;" ></input>
+	
+	<input type="text" class="form-control" placeholder="Name" name="name" style="margin-bottom:10px;" ></input>
+
+	<input type="text" class="form-control" placeholder="E-Mail address" name="email" style="margin-bottom:10px;"></input>
+
+	<input type="text" class="form-control" placeholder="Phone"  name="phone" style="margin-bottom:10px;"></input>
+	
+	<input type="text" class="form-control" placeholder="Phone Other"  name="phone_other" style="margin-bottom:10px;"></input>
+
+	<input type="text" class="form-control" placeholder="Moblie No"  name="mobile_phone" style="margin-bottom:10px;"></input>
+	
+	<input type="text" class="form-control" placeholder="What I do"  name="what_i_do" style="margin-bottom:10px;"></input>
+
+	<input type="password" class="form-control" placeholder="password" name="password" style="margin-bottom:10px;"></input>
+	<input type="password" class="form-control" placeholder="password comfirmation" name="confirmation" style="margin-bottom:10px;"></input>
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="create Account	"></input>
+	<input type="hidden" name="_csrf" value="<%=_csrf %>"></input>
+</form>
+<br>
+<hr style="border-top:1px solid #DC2323">
+<!--<a href="#" class="or-btn" style="background-color: #fff;border: 1px solid #DC2323;border-radius: 50px;top: 427px;font-size: 17px;padding: 5px;color: #DC2323;position: absolute;right: 48%;">OR</a>
+				<div class="log">-->
+<div class="linkdin-login" style="padding-top: 5px;">
+				
+				<a href="/linkedinlogin" class="btn-linkdin" style="background-color: #0079aa;border-bottom-right-radius: 25px;border-top-right-radius: 25px;color: #fff;padding: 8px 25px 8px; border-bottom-left-radius: 25px;border-top-left-radius: 25px;">LOGIN WITH LINKEDIN</a>
+				</div>
+				</div>
+</div> 

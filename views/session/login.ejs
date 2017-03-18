@@ -1,0 +1,16 @@
+<center>
+<form action="/session/validate" method="post" class="form-login" style="margin-top:4%; max-width:30%; padding:19px 29px 29px; background-color:#ececec; border:1px solid #9EC0EB; border-radius:15px;">
+	<h2 class="form-signin-heading">Login</h2>
+	<% if(flash && flash.err){ %>
+		<ul class="alert alert-success">
+		<% Object.keys(flash.err).forEach(function(error){%>
+				<li><%- JSON.stringify(flash.err[error]) %> </li>
+		<%}) %>
+		</ul>
+	<% }
+	%>
+	<input type="text" class="form-control" placeholder="email address" name="email" style="margin-bottom:10px;"</input>
+	<input type="password" class="form-control" placeholder="password" name="password" style="margin-bottom:10px;"></input>
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="Login"></input>
+</form>
+</center>
